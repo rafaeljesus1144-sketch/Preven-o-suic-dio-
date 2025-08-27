@@ -1,0 +1,198 @@
+prevencao-suicidio/
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+     └── (adicione aqui suas imagens, se tiver)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prevenção e Apoio - Suicídio</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Prevenção e Apoio - Suicídio</h1>
+    <p>Informações confiáveis e recursos de ajuda</p>
+</header>
+
+<nav>
+    <a href="#informacoes">Informações</a>
+    <a href="#sinais">Sinais de alerta</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#estatisticas">Estatísticas</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="informacoes">
+    <h2>Informações Gerais</h2>
+    <p>O suicídio é uma das principais causas de morte no mundo, afetando pessoas de todas as idades...</p>
+</section>
+
+<section id="sinais">
+    <h2>Sinais de Alerta</h2>
+    <ul>
+        <li>Isolamento social</li>
+        <li>Mudanças repentinas de humor</li>
+        <li>Comportamentos autodestrutivos</li>
+        <li>Falar sobre querer morrer ou se sentir sem esperança</li>
+    </ul>
+</section>
+
+<section id="recursos">
+    <h2>Recursos de Ajuda</h2>
+    <div class="resource">
+        <h3>Brasil - CVV</h3>
+        <p>Telefone: <strong>188</strong> (24h, gratuito e sigiloso)</p>
+        <p>Website: <a href="https://www.cvv.org.br" target="_blank">www.cvv.org.br</a></p>
+    </div>
+    <div class="resource">
+        <h3>Coreia do Sul</h3>
+        <p>Telefone: <strong>1577-0199</strong> (apoio psicológico)</p>
+    </div>
+</section>
+
+<section id="estatisticas">
+    <h2>Estatísticas Globais</h2>
+    <div class="chart-container">
+        <canvas id="suicideChart"></canvas>
+    </div>
+    <script src="script.js"></script>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Prevenção e Apoio. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+nav {
+    background-color: #ffe3e3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+nav a {
+    margin: 10px 15px;
+    text-decoration: none;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+section {
+    padding: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+h2 {
+    color: #ff6b6b;
+}
+.resource {
+    background-color: #fff0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff6b6b;
+    color: white;
+    margin-top: 20px;
+}
+.chart-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+form {
+    background-color: #ffe3e3;
+    padding: 20px;
+    border-radius: 8px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ff6b6b;
+}
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #e55b5b;
+}
+
+const ctx = document.getElementById('suicideChart').getContext('2d');
+const suicideChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Lesoto', 'Guiana', 'Lituânia', 'Coreia do Sul', 'Rússia'],
+        datasets: [{
+            label: 'Taxa de suicídio (por 100.000 habitantes)',
+            data: [87.5, 40.9, 27.9, 25.8, 24.1],
+            backgroundColor: '#ff6b6b'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Países com maiores taxas de suicídio' }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+# Prevenção e Apoio - Suicídio
+
+Site educativo sobre prevenção do suicídio, oferecendo informações, sinais de alerta, estatísticas e recursos de apoio psicológico.
+
+## Como publicar no GitHub Pages
+
+1. Crie uma conta no [GitHub](https://github.com/).
+2. Crie um repositório público.
+3. Faça upload de todos os arquivos (`index.html`, `style.css`, `script.js`, pasta `assets/`).
+4. Vá em **Settings → Pages**, selecione a branch `main` e clique em **Save**.
+5. Copie o link gerado pelo GitHub Pages para acessar o site online.
+6. Para aparecer no Google, use [Google Search Console](https://search.google.com/search-console/) e solicite indexação.
